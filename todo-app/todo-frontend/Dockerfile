@@ -12,4 +12,6 @@ RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
 
 USER node
 
+RUN CI=true npm test
+
 CMD npm start
