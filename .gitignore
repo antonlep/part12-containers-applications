@@ -1,4 +1,5 @@
 redis_data/
+test/
 
 # Logs
 logs
