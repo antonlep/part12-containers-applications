@@ -1,0 +1,13 @@
+version: "3.8" # Version 3.8 is quite new and should work
+
+services:
+  app: # The name of the service, can be anything
+    image: todo-frontend # Declares which image to use
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app # Declares where to build if image is not found
+    ports: # Declares the ports to publish
+      - 3001:3001
+    container_name: todo-frontend-dev
