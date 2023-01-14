@@ -1,0 +1,22 @@
+version: "3.8" # Version 3.8 is quite new and should work
+
+services:
+  app: # The name of the service, can be anything
+    image: todo-frontend # Declares which image to use
+    build:
+      context: .
+      dockerfile: ./todo-frontend/dev.Dockerfile
+    volumes:
+      - ./todo-frontend/:/usr/src/app # Declares where to build if image is not found
+    ports: # Declares the ports to publish
+      - 3001:3000
+    container_name: todo-frontend-dev
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app # wait for the frontend container to be started
