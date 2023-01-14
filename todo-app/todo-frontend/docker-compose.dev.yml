@@ -9,5 +9,5 @@ services:
     volumes:
       - ./:/usr/src/app # Declares where to build if image is not found
     ports: # Declares the ports to publish
-      - 3001:3001
+      - 3001:3000
     container_name: todo-frontend-dev
