@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/62fbb573852318568c75963e
+Content-Type: application/json
+
+{
+    "title": "google",
+    "author": "G",
+    "url": "www.google.fi",
+    "likes": 18
+}
